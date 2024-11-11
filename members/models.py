@@ -10,3 +10,12 @@ class Member(models.Model):
 
     def __str__(self):
         return f"{self.firstname} {self.lastname}"
+    
+class Products(models.Model):
+    Clave = models.CharField(max_length=255)
+    Descripcion = models.CharField(max_length=255)
+    Linea = models.CharField(max_length=255)
+    existencias = models.PositiveIntegerField(null=True)
+
+    def __str__(self):
+        return f"{self.Descripcion} Linea: {self.Linea}"

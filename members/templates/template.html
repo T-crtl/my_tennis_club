@@ -1,8 +1,5 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-<link rel="stylesheet" href="{% static 'myfirst.css' %}">
-<body>
+{% extends "master.html" %}
+{% block content %}
     <table border='1'>
         <tr>
           <th>ID</th>
@@ -19,5 +16,4 @@
           </tr>
         {% endfor %}
       </table>
-</body>
-</html>
+{% endblock %}

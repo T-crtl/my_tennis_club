@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
-from .models import Member
+from .models import Member, Products
 
 # Create your views here.
 
@@ -30,5 +30,13 @@ def testing(request):
   template = loader.get_template('template.html')
   context = {
     'mymembers': mydata,
+  }
+  return HttpResponse(template.render(context, request))
+
+def product(request):
+  mydata = Products.objects.order_by('id').all()
+  template = loader.get_template('product.html')
+  context = {
+    'product': mydata,
   }
   return HttpResponse(template.render(context, request))

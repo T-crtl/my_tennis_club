@@ -1,0 +1,28 @@
+{% extends "master.html" %}
+
+{% block content %}
+<h1>Order Product</h1>
+<main>
+  <!-- Contenido de la página -->
+  <div class="form__group field">
+      <label for="name" class="form__label">Producto: </label>
+      <select class="form__field" name="product" id="product" required>
+        <option value="" disabled selected>Selecciona Producto</option>
+        {% for x in product %}
+          <option value="{{ x.id }}">{{ x.Descripcion }}</option>
+        {% endfor %}
+      </select>
+  </div>
+  
+  <div class="form__group field">
+      <label for="quantity" class="form__label">Cantidad: </label>
+      <input type="number" class="form__field" placeholder="Ingresa Cantidad" name="quantity" id="quantity" required />
+  </div>
+  
+  <div class="form__group field">
+      <label for="price" class="form__label">Nombre Responsable: </label>
+      <input type="text" class="form__field" placeholder="Ingresa tu Nombre" name="price" id="price" required />
+  </div>
+  
+</main>  
+{% endblock %}
